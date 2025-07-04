@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import TailwindCSS_DisplayTest from "./CSS_TypeingInput/TailwindCSS_DisplayTest";
+import TailwindCSS_DisplayTest from "./TailwindCSS_DisplayTest";
 
 const FADE_DURATION = 400; // ms
 
