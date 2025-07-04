@@ -61,7 +61,7 @@ const DragDropDemo = () => {
     setDraggingIndex(null);
   };
 
-  const draggable = ["text-red-300", "text-3xl", "font-bold"];
+  const draggable = ["text-red-300", "text-5xl", "font-bold"];
 
   return (
     <div className="flex flex-col items-center gap-8 rounded-xl bg-blue-300/40 p-5">
@@ -86,7 +86,7 @@ const DragDropDemo = () => {
           }`}
         disabled={!droppedIds.length || isClearing}
       >
-        清空
+        CLEAR
       </button>
       <div id="Dragable Items" className="flex gap-2">
         {draggable.map((item) => (

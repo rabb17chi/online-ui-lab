@@ -12,7 +12,7 @@ const TailwindCSS_DisplayTest: React.FC<TailwindCSS_DisplayTestProps> = ({
     <div className={`grid gap-5 w-full text-center`}>
       <button
         id="ThemeChanger"
-        className={`cursor-pointer border-2 p-1 w-fit mx-auto transition-colors duration-300 `}
+        className={`cursor-pointer border-2 min-h-[50px] p-1 w-fit mx-auto transition-colors duration-300 `}
         onClick={() => setIsDark((prev) => !prev)}
       >
         <span
@@ -31,6 +31,17 @@ const TailwindCSS_DisplayTest: React.FC<TailwindCSS_DisplayTestProps> = ({
           Light
         </span>
       </button>
+      <p className="text-start">
+        Current Background Color Status:{" "}
+        <span
+          className={`p-2 ${
+            isDark ? "bg-[#333]/80 text-white" : "bg-[#fff]/80 text-black"
+          }`}
+        >
+          {isDark ? "#333" : "#fff"}
+        </span>{" "}
+        (with 80 opacity)
+      </p>
       <div
         id="Test-Content"
         className={`flex items-center justify-center min-h-[20vh] transition-all duration-300 ${
