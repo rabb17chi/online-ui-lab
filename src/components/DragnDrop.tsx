@@ -64,7 +64,18 @@ const DragDropDemo = () => {
   const draggable = ["text-red-300", "text-3xl", "font-bold"];
 
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 rounded-xl bg-blue-300/40 p-5">
+      <div id="TailwindCSS Selector Section Intro" className="text-3xl">
+        <p className="text-center">
+          {" "}
+          You are trying the
+          <span className="underline underline-offset-4 cursor-pointer hover:bg-green-300 transition-colors duration-300 rounded-xl p-2">
+            TailwindCSS
+          </span>
+          .
+        </p>
+        <br /> Try to add the value into the dotted area to see what happen.
+      </div>
       <button
         onClick={handleClear}
         className={`px-4 py-2 rounded transition 
