@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
-import ThemeProvider from "@/components/Context/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Online UI Lab | Unleash Your Imagination",
@@ -17,10 +16,8 @@ export default async function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body>
-        {/* <ThemeProvider> */}
         <Header />
         {children}
-        {/* </ThemeProvider> */}
       </body>
     </html>
   );
