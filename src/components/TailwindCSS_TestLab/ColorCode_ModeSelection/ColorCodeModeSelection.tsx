@@ -5,7 +5,7 @@ import HexColorPanel from "./HexColorPanel";
 import RgbaColorPanel from "./RgbaColorPanel";
 import TailwindColorPanel from "./TailwindColorPanel";
 
-type ColorMode = "hex" | "rgba" | "tailwind";
+type ColorMode = "hex" | "rgba";
 
 interface ColorCodeModeSelectionProps {
   colorMode: ColorMode;
@@ -61,7 +61,7 @@ const ColorCodeModeSelection: React.FC<ColorCodeModeSelectionProps> = ({
         >
           <option value="hex">Hex + Opacity</option>
           <option value="rgba">RGBA</option>
-          <option value="tailwind">Tailwind Class</option>
+          {/* <option value="tailwind">Tailwind Class</option> */}
         </select>
       </label>
       {colorMode === "hex" && (
@@ -86,7 +86,7 @@ const ColorCodeModeSelection: React.FC<ColorCodeModeSelectionProps> = ({
           setOpacity={setCustomOpacity}
         />
       )}
-      {colorMode === "tailwind" && (
+      {/* {colorMode === "tailwind" && (
         <TailwindColorPanel
           isDark={isDark}
           lightClass={lightTailwind}
@@ -96,7 +96,7 @@ const ColorCodeModeSelection: React.FC<ColorCodeModeSelectionProps> = ({
           setDarkClass={setDarkTailwind}
           setOpacity={setCustomOpacity}
         />
-      )}
+      )} */}
     </div>
   );
 };

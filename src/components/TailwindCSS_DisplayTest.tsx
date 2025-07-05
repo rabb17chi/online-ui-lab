@@ -5,7 +5,7 @@ interface TailwindCSS_DisplayTestProps {
   droppedIds: string[];
 }
 
-type ColorMode = "hex" | "rgba" | "tailwind";
+type ColorMode = "hex" | "rgba";
 
 const TailwindCSS_DisplayTest: React.FC<TailwindCSS_DisplayTestProps> = ({
   droppedIds,
@@ -23,7 +23,7 @@ const TailwindCSS_DisplayTest: React.FC<TailwindCSS_DisplayTestProps> = ({
   const [lightTailwind, setLightTailwind] = useState("bg-orange-200");
   const [darkTailwind, setDarkTailwind] = useState("bg-gray-900");
   // 共用
-  const [customOpacity, setCustomOpacity] = useState(80);
+  const [customOpacity, setCustomOpacity] = useState(100);
 
   // HEX + opacity 處理
   function hexWithOpacity(hex: string, opacity: number) {
@@ -85,6 +85,19 @@ const TailwindCSS_DisplayTest: React.FC<TailwindCSS_DisplayTestProps> = ({
           Light
         </span>
       </button>
+      <div
+        id="Test-Content"
+        className={`flex items-center justify-center min-h-[20vh] ${bgClass}`}
+        style={bgStyle}
+      >
+        <span
+          className={`${
+            isDark ? "text-[#fff]" : "text-[#000]"
+          } transition-all duration-300 ${droppedIds.join(" ")}`}
+        >
+          Test
+        </span>
+      </div>
       <ColorCodeModeSelection
         colorMode={colorMode}
         setColorMode={setColorMode}
@@ -108,19 +121,6 @@ const TailwindCSS_DisplayTest: React.FC<TailwindCSS_DisplayTestProps> = ({
         customOpacity={customOpacity}
         setCustomOpacity={setCustomOpacity}
       />
-      <div
-        id="Test-Content"
-        className={`flex items-center justify-center min-h-[20vh] ${bgClass}`}
-        style={bgStyle}
-      >
-        <span
-          className={`${
-            isDark ? "text-[#fff] border-[#fff]" : "text-[#000] border-black"
-          } w-fit border transition-all duration-300 ${droppedIds.join(" ")}`}
-        >
-          Test
-        </span>
-      </div>
     </div>
   );
 };

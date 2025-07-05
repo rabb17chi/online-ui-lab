@@ -9,6 +9,12 @@ const DragDropDemo = () => {
   const [droppedIds, setDroppedIds] = useState<string[]>([]);
   const [draggingIndex, setDraggingIndex] = useState<number | null>(null);
   const [isClearing, setIsClearing] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [draggable, setDraggable] = useState([
+    "text-red-300",
+    "text-5xl",
+    "font-bold",
+  ]);
 
   const dropZoneRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +67,15 @@ const DragDropDemo = () => {
     setDraggingIndex(null);
   };
 
-  const draggable = ["text-red-300", "text-5xl", "font-bold"];
+  const handleAddToDraggable = () => {
+    const trimmed = inputValue.trim();
+    if (trimmed && !draggable.includes(trimmed)) {
+      setDraggable((prev) => [...prev, trimmed]);
+      setInputValue("");
+    }
+  };
+
+  // const draggable = ["text-red-300", "text-5xl", "font-bold"];
 
   return (
     <div className="flex flex-col items-center gap-8 rounded-xl bg-blue-300/40 p-5">
@@ -75,6 +89,19 @@ const DragDropDemo = () => {
           .
         </p>
         <br /> Try to add the value into the dotted area to see what happen.
+        <input
+          type="text"
+          placeholder="TailwindCSS-input"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          className="border px-2 py-1 rounded"
+        />
+        <button
+          onClick={handleAddToDraggable}
+          className="ml-2 px-3 py-1 bg-blue-400 text-white rounded hover:bg-blue-500"
+        >
+          Add to list
+        </button>
       </div>
       <button
         onClick={handleClear}
