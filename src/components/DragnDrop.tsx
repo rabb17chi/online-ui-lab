@@ -89,19 +89,21 @@ const DragDropDemo = () => {
           .
         </p>
         <br /> Try to add the value into the dotted area to see what happen.
-        <input
-          type="text"
-          placeholder="TailwindCSS-input"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          className="border px-2 py-1 rounded"
-        />
-        <button
-          onClick={handleAddToDraggable}
-          className="ml-2 px-3 py-1 bg-blue-400 text-white rounded hover:bg-blue-500"
-        >
-          Add to list
-        </button>
+        <div>
+          <input
+            type="text"
+            placeholder="TailwindCSS-input"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            className="border px-2 py-1 rounded"
+          />
+          <button
+            onClick={handleAddToDraggable}
+            className="ml-2 px-3 py-1 bg-blue-400 text-white rounded hover:bg-blue-500"
+          >
+            Add to list
+          </button>
+        </div>
       </div>
       <button
         onClick={handleClear}
